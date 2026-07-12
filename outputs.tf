@@ -1,3 +1,7 @@
+output "orbital_contacts_id" {
+  description = "Map of id values across all orbital_contacts, keyed the same as var.orbital_contacts"
+  value       = { for k, v in azurerm_orbital_contact.orbital_contacts : k => v.id }
+}
 output "orbital_contacts_contact_profile_id" {
   description = "Map of contact_profile_id values across all orbital_contacts, keyed the same as var.orbital_contacts"
   value       = { for k, v in azurerm_orbital_contact.orbital_contacts : k => v.contact_profile_id }
